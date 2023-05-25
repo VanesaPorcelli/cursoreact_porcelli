@@ -1,18 +1,22 @@
-import Footer from "./Footer.jsx";
-import  Home  from "./Home.jsx";
-import { Navbar } from "./Navbar.jsx";
-
+import { useState } from "react";
+import Navbar from "./components/layout/navbar/Navbar";
+import { ItemListContainer } from "./components/pages/ItemListContainer/ItemListContainer";
 
 const App = () => {
-  // logica
+  const [nombre, setNombre] = useState("Vanesa");
 
+  let cantidad = 50;
   return (
-    <>
+    <div>
       <Navbar />
-      <Home />
-      <Footer />
-    </>
+      <ItemListContainer nombre={nombre} cantidad={cantidad} />
+      <button onClick={() => setNombre("Nuevo Usuario")}>
+        Cambiar Usuario
+      </button>
+    </div>
   );
 };
 
 export default App;
+
+// ProductsList(nombre)
